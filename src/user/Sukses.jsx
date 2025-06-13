@@ -18,12 +18,12 @@ function VerifikasiBerhasil() {
 
   return (
     <div className="flex items-center justify-center h-screen bg-cover bg-center"
-    style={{ backgroundImage: `url(${bg})` }}>
+      style={{ backgroundImage: `url(${bg})` }}>
       <div className="text-center bg-white p-10 rounded-xl shadow-lg">
         <div className="mb-4 flex justify-center">
           <img src={verifSuccess} alt="verifikasi berhasil" className="w-16 h-16" />
         </div>
-        <h1 className="my-5 text-2xl font-bold">Selamat 🙌 Verifikasi aku berhasil</h1>
+        <h1 className="my-5 text-2xl font-bold">Selamat 🙌 Verifikasi Anda berhasil</h1>
         <h2 className="mb-2 text-xl text-black font-sans">Welcome to Zoo Notion</h2>
         <img className="mt-5 w-24 mx-auto" src={logoZoo} alt="Logo Zoo Notion" />
       </div>

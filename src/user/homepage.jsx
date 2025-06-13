@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import '../style.css';
+import CommunityPage from './community';
 
 // Komponen halaman lain (dummy)
 function Education() {
   return <div className="p-10 text-center text-2xl">Halaman Education</div>;
 }
 function Community() {
-  return <div className="p-10 text-center text-2xl">Halaman Community</div>;
+  return <CommmunityPage/>;
 }
 function Zoo() {
   return <div className="p-10 text-center text-2xl">Halaman Zoo</div>;

@@ -7,24 +7,29 @@ import VerifikasiBerhasil from "./Admin/verifikasi_berhasil";
 import Dashboard from "./Admin/dasbord_admin";
 import Homepage from "./user/homepage";
 
-import LoginUser from "./user/login";
+import LoginUser from "./user/LoginUser";
 import Register from "./user/register";
-import Verification from "./user/Verification-login";
-import LupaPassword from "./user/lupa_password";
-import NewPassword from "./user/newPassword";
-import Verifikasi_user from "./user/Verification_lupaPassword";
-import LoginSuccess from "./user/success";
+import V_Login from "./user/V_Login";
+import LupaPassword from "./user/LupaPassword";
+import NewPassword from "./user/NewPassword";
+import V_LupaPassword from "./user/V_LupaPassword";
+import LoginSuccess from "./user/Sukses";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginUser />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/verification-login" element={<Verification />} />
+
+        <Route path="/LoginUser" element={<LoginUser />} />
+        <Route path="/verification-login" element={<V_Login />} />
+
         <Route path="/lupaPassword" element={<LupaPassword />} />
-        <Route path="/newPassword" element={<NewPassword />} />
-        <Route path="/verifikasi-user" element={<Verifikasi_user />} />
+        <Route path="/verification-lupa-password" element={<V_LupaPassword />} />
+        <Route path="/NewPassword" element={<NewPassword />} />
+
+        <Route path="/register" element={<Register />} />
+        
+
         <Route path="/login-success" element={<LoginSuccess />} />        
         <Route path="/homepage" element={<Homepage />} />
 

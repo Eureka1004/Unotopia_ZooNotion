@@ -16,7 +16,7 @@ function VerifikasiBerhasil({ onRedirect }) {
   }, [navigate]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 font-sans m-0">
+    <div className="flex items-center justify-center min-h-screen bg-gray-500 font-sans m-0">
       <div className="text-center bg-white p-10 rounded-xl shadow-lg">
         <div className="mb-4 flex justify-center">
           <img src={verifSuccess} alt="verifikasi berhasil" className="w-16 h-16" />

@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import LoginAdmin from "./Admin/login_admin";
-import VerificationPage from "./Admin/VerificationPage";
-import VerifikasiBerhasil from "./Admin/verifikasi_berhasil";
+import LoginAdmin from "./Admin/LoginAdmin";
+import V_LoginAdmin from "./Admin/V_LoginAdmin";
+import Berhasil from "./Admin/Berhasil";
 import Dashboard from "./Admin/dasbord_admin";
 import Homepage from "./user/homepage";
 
@@ -21,22 +21,20 @@ export default function App() {
       <Routes>
 
         <Route path="/LoginUser" element={<LoginUser />} />
+        <Route path="/Register" element={<Register />} />
         <Route path="/verification-login" element={<V_Login />} />
 
         <Route path="/lupaPassword" element={<LupaPassword />} />
         <Route path="/verification-lupa-password" element={<V_LupaPassword />} />
         <Route path="/NewPassword" element={<NewPassword />} />
 
-        <Route path="/register" element={<Register />} />
-        
-
         <Route path="/login-success" element={<LoginSuccess />} />        
         <Route path="/homepage" element={<Homepage />} />
 
 
-        <Route path="/login-admin" element={<LoginAdmin />} />
-        <Route path="/verification" element={<VerificationPage />} />
-        <Route path="/success" element={<VerifikasiBerhasil />} />
+        <Route path="/LoginAdmin" element={<LoginAdmin />} />
+        <Route path="/verification-login-admin" element={<V_LoginAdmin />} />
+        <Route path="/success" element={<Berhasil />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>

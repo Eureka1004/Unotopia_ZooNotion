@@ -33,7 +33,7 @@ export default function VerificationPage() {
       alert("Kode verifikasi harus 6 digit dan berurutan");
       return;
     }
-    navigate("/homepage");
+    navigate("/login-success");
   };
 
   return (

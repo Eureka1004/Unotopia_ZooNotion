@@ -24,7 +24,7 @@ function LoginUser() {
     navigate("/verification-login", { state: { email: data.email } });
   };
 
-  const switchToAdmin = () => navigate("/LoginAdmin");
+  const switchToAdmin = () => navigate("/login-admin");
   const switchToLupaPassword = () => navigate("/lupaPassword");
   const switchToRegist = () => navigate("/register");
 

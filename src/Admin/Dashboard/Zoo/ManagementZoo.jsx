@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../style.css';
+import '../../../style.css';
 import TambahZoo from "./tambah_zoo";
 import KelolaZoo from "./kelola_zoo";
 
@@ -82,7 +82,7 @@ export default function ManagementZoo() {
                   </button>
                   <button
                     className="bg-red-600 text-white rounded-full py-2 px-4 font-medium text-base hover:bg-red-700 transition"
-                    onClick={() => alert(`Hapus ${event.title}?`)}
+                    onClick={() => alert(`Hapus ${Zoo.title}?`)}
                   >
                     Delete
                   </button>

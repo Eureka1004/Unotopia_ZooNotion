@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../style.css';
+import '../../../style.css';
 import TambahHewan from "./tambah_hewan";
 
 const categories = ["Aves", "Mammalia", "Pisces", "Amfibi", "Reptil"];

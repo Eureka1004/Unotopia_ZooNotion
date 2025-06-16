@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import '../style.css';
+import '../../../style.css';
 
 export default function TambahArtikel({ onClose }) {
-  const [JudulArtikel, setJudulArtikel] = useState("");
+  const [judulArtikel, setJudulArtikel] = useState("");
   const [deskripsi, setDeskripsi] = useState("");
-  const [Penulis, setpenulis] = useState([]);
+  const [penulis, setPenulis] = useState(""); // dari [] menjadi string
   const [banner, setBanner] = useState([]);
   const [tanggalPenulisan, setTanggalPenulisan] = useState("");
 
@@ -14,16 +14,30 @@ export default function TambahArtikel({ onClose }) {
     setter(prev => [...prev, ...urls]);
   };
 
-
-  // Fungsi hapus file banner
   const handleRemoveBanner = (idx) => {
     setBanner(prev => prev.filter((_, i) => i !== idx));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Kirim ke backend
-    
+
+    const artikelData = {
+      judulArtikel,
+      deskripsi,
+      penulis,
+      banner,
+      tanggalPenulisan,
+    };
+
+    console.log("Artikel Disimpan:", artikelData);
+
+    // Kirim ke backend jika ada
+    // fetch('/api/artikel', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify(artikelData),
+    // })
+
     // onClose && onClose();
   };
 
@@ -31,42 +45,51 @@ export default function TambahArtikel({ onClose }) {
     <div className="py-4 px-2">
       <form onSubmit={handleSubmit} className="bg-white shadow border p-6 rounded-lg max-w-lg mx-auto">
         <h1 className="text-xl font-bold mb-6 text-green-900 text-center">Tambah Artikel</h1>
-        {/* Nama Event */}
+
+        {/* Judul Artikel */}
         <div className="mb-4">
           <label className="block mb-1 text-sm font-semibold text-gray-700">Judul Artikel</label>
           <input
             type="text"
             placeholder="Masukkan judul"
-            onChange={(e) => setNamaEvent(e.target.value)}
+            value={judulArtikel}
+            onChange={(e) => setJudulArtikel(e.target.value)}
             className="w-full px-3 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm"
           />
         </div>
+
+        {/* Penulis */}
         <div className="mb-4">
           <label className="block mb-1 text-sm font-semibold text-gray-700">Penulis</label>
           <input
             type="text"
             placeholder="Masukkan nama penulis"
-            onChange={(e) => setNamaEvent(e.target.value)}
+            value={penulis}
+            onChange={(e) => setPenulis(e.target.value)}
             className="w-full px-3 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm"
           />
         </div>
+
+        {/* Tanggal Penulisan */}
         <div className="mb-4">
-            <label className="block mb-1 text-sm font-semibold text-gray-700">Tanggal penulisan</label>
-            <input
-                type="date" // ubah dari "text" menjadi "date"
-                onChange={(e) => setTanggalPenulisan(e.target.value)}
-                className="w-full px-3 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm"
-            />
+          <label className="block mb-1 text-sm font-semibold text-gray-700">Tanggal Penulisan</label>
+          <input
+            type="date"
+            value={tanggalPenulisan}
+            onChange={(e) => setTanggalPenulisan(e.target.value)}
+            className="w-full px-3 py-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 text-sm"
+          />
         </div>
 
         {/* Deskripsi */}
         <div className="mb-4">
           <label className="block mb-1 text-sm font-semibold text-gray-700">Artikel</label>
           <textarea
-            placeholder="Masukkan deskripsi"
+            placeholder="Masukkan isi artikel"
+            value={deskripsi}
             onChange={(e) => setDeskripsi(e.target.value)}
             className="w-full px-3 py-2 border border-gray-300 rounded resize-none focus:outline-none focus:ring-2 focus:ring-green-400 text-sm"
-            rows={3}
+            rows={4}
           ></textarea>
         </div>
 
@@ -99,7 +122,7 @@ export default function TambahArtikel({ onClose }) {
           </div>
         </div>
 
-        {/* Tombol Simpan dan Close */}
+        {/* Tombol Aksi */}
         <div className="flex gap-3 mt-4">
           <button
             type="submit"

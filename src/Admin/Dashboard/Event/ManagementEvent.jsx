@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../style.css';
+import '../../../style.css';
 import TambahEvent from "./tambah_event";
 import DetailEvent from "./kelola_event";
 
@@ -31,7 +31,6 @@ export default function ManajemenEvent() {
   if (selectedEvent !== null) {
     return <DetailEvent event={events[selectedEvent]} onBack={() => setSelectedEvent(null)} />;
   }
-
   return (
     <div className="flex min-h-screen bg-gray-100">
       <main className="flex-1 px-[5vw] py-10">

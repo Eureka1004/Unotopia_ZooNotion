@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import '../style.css';
 import logo from "../../public/logozoo.png";
-import image from "../../public/bunglon_login.png"; 
+import image from "../../public/iguanaregist.jpg"; 
 import { useForm } from "react-hook-form";
 import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 
@@ -39,7 +39,9 @@ function Login() {
       <div className="w-1/2 bg-white flex flex-col justify-center items-center">
         <img src={logo} alt="Logo" className="mb-8" />
         <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-sm">
-
+          <label htmlFor="username" className="block text-gray-700 text-sm font-bold mb-2">
+            Username
+          </label>
           <div className="mb-4">
             <input
               id="username"
@@ -51,6 +53,9 @@ function Login() {
               className="mb-2 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
             {errors.username && <p className="text-red-500 text-xs mt-1">{errors.username.message}</p>}<br />
+              <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">
+                Email
+              </label>
             <input
               id="email"
               type="email"
@@ -66,6 +71,9 @@ function Login() {
             />
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
             <div className="relative mb-3">
+              <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">
+                Password
+              </label>
               <input
                 id="password"
                 type={showPassword ? "text" : "password"}

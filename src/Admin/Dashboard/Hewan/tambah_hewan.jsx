@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../style.css';
+import '../../../style.css';
 
 const TambahHewan = ({ onClose }) => {
   const [banner, setBanner] = useState([]);

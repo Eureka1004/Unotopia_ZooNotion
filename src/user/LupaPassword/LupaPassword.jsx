@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import '../style.css';
-import logo from "../../public/logozoo.png";
-import bg from "../../public/bgLogin_user.png";
+import '../../style.css';
+import logo from "../../../public/logozoo.png";
+import bg from "../../../public/bgLogin_user.png";
 import { useForm } from "react-hook-form";
 import { useLocation } from 'react-router-dom';
 

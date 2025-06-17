@@ -14,12 +14,11 @@ import LayoutDashboard from "./Admin/LayoutDasboard";
   import Artikel from "./Admin/Dashboard/Artikel/artikel";
   import Informasi from "./Admin/Dashboard/informasi";
 
-import Homepage from "./user/homepage";
 
 {/* User section imports */}
-import LupaPassword from "./user/LupaPassword";
-  import NewPassword from "./user/NewPassword";
-  import V_LupaPassword from "./user/V_LupaPassword";
+import LupaPassword from "./user/LupaPassword/LupaPassword";
+  import NewPassword from "./user/LupaPassword/NewPassword";
+  import V_LupaPassword from "./user/LupaPassword/V_LupaPassword";
 
 import LoginUser from "./user/LoginUser";
 
@@ -27,6 +26,10 @@ import Register from "./user/register";
 import V_Login from "./user/V_Login";
 import LoginSuccess from "./user/Sukses";
 
+import LayoutHomepage from "./user/LayoutHomepage";
+  import Home from "./user/Pages/homepage";
+  import Community from "./user/Pages/Community/community";
+  import Kebun from "./user/Pages/KebunBinatang";
 
 export default function App() {
   return (
@@ -43,7 +46,13 @@ export default function App() {
         <Route path="/NewPassword" element={<NewPassword />} />
 
         <Route path="/login-success" element={<LoginSuccess />} />        
-        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/homepage" element={<LayoutHomepage />}>
+          <Route index element={<Home />} />
+          <Route path="user/homepage" element={<Home />} />
+          <Route path="user/community" element={<Community />} />
+          <Route path="user/kebun-binatang" element={<Kebun />} />
+
+        </Route>
         {/* User section end */}
 
         {/* Admin section start */} 

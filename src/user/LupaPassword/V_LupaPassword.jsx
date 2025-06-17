@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import logo from "../../public/icon.png";
+import logo from "../../../public/icon.png";
 import { useNavigate, useLocation } from "react-router-dom";
-import "../style.css";
-import bg from "../../public/bgLogin_user.png"; 
+import "../../style.css";
+import bg from "../../../public/bgLogin_user.png"; 
 
 export default function VerificationPage() {
   const inputsRef = useRef([]);

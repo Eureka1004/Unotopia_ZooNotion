@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import '../../style.css';
+import { Link } from "react-router-dom";
 
 function Homepage() {
   const banners = [
@@ -61,25 +62,32 @@ function Homepage() {
       {/* Menu Cards */}
       <div className="py-6 flex flex-wrap justify-center gap-8">
         {[
-          { img: 'EducationIcon.png', label: 'Education' },
-          { img: 'QuizzIcon.png', label: 'Quizz' },
-          { img: 'komunitasIcon.png', label: 'Komunitas' },
-          { img: 'artikelIcon.png', label: 'Artikel' },
-        ].map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center text-green-900 transition"
-          >
-            <div className="w-35 h-35 rounded-full flex items-center justify-center shadow mb-2 border-1 border-gray-300 transition hover:scale-120">
-              <img
-                src={`/${item.img}`}
-                alt={item.label}
-                className="w-35 h-35   object-contain"
-              />
+          { img: 'EducationIcon.png', label: 'Education', link: '/homepage/user/edukasi' },
+          { img: 'QuizzIcon.png', label: 'Quizz', link: '/homepage/user/quizz' },
+          { img: 'komunitasIcon.png', label: 'Komunitas', link: '/homepage/user/community' },
+          { img: 'artikelIcon.png', label: 'Artikel', link: '/homepage/user/artikel' },
+        ].map((item, index) => {
+          const CardContent = (
+            <div className="flex flex-col items-center text-green-900 transition hover:scale-105">
+              <div className="w-35 h-35 rounded-full flex items-center justify-center shadow mb-2 border border-gray-300">
+                <img
+                  src={`/${item.img}`}
+                  alt={item.label}
+                  className="w-35 h-35 object-contain"
+                />
+              </div>
+              <p className="font-semibold text-lg">{item.label}</p>
             </div>
-            <p className="font-semibold text-lg">{item.label}</p>
-          </div>
-        ))}
+          );
+
+          return item.link ? (
+            <Link key={index} to={item.link}>
+              {CardContent}
+            </Link>
+          ) : (
+            <div key={index}>{CardContent}</div>
+          );
+        })}
       </div>
 
       {/* Visi Misi Kontak */}

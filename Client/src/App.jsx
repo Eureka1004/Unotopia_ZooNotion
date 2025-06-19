@@ -22,7 +22,7 @@ import LupaPassword from "./user/LupaPassword/LupaPassword";
 
 import LoginUser from "./user/LoginUser";
 
-import Register from "./user/register";
+import Register from "./user/Register";
 import V_Login from "./user/V_Login";
 import LoginSuccess from "./user/Sukses";
 
